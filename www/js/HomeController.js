@@ -8,7 +8,7 @@ angular.module('asbike.HomeCtrl', ['firebase'])
         $scope.user = {};
         $scope.watchOptions = {
             timeout : 5000,
-            enableHighAccuracy: false // may cause errors if true
+            enableHighAccuracy: true // may cause errors if true
         };
         
         AlertFactory('Test-Event', 'uid-test-1').$bindTo($scope, 'alerts').then(function() {
