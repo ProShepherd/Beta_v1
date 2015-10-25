@@ -75,7 +75,7 @@
         <h1 ng-show="!help && activeRequest">Processing...</h1>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-xs-12" ng-show="activeRequest">
-                <div class="panel panel-danger" ng-click="resolveRequest()">
+                <div class="panel panel-danger" ng-click="showConfirm()">
                     <div class="panel-heading">
                         <div class="row">
                             <div class="col-xs-3">
@@ -91,7 +91,7 @@
                         </div>
                     </a>
                 </div>
-                <div>{{help}}</div>
+                <h2>{{help}}</h2>
             </div>
         </div>
         <!-- /.row -->

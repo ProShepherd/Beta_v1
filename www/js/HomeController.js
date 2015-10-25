@@ -1,6 +1,6 @@
 angular.module('asbike.HomeCtrl', ['firebase'])
 
-.controller('HomeCtrl', ['$scope', 'AlertFactory', 'UserFactory', '$cordovaGeolocation',  function($scope, AlertFactory, UserFactory, $cordovaGeolocation) {
+.controller('HomeCtrl', ['$scope', '$ionicPopup', 'AlertFactory', 'UserFactory', '$cordovaGeolocation',  function($scope, $ionicPopup, AlertFactory, UserFactory, $cordovaGeolocation) {
     
     $scope.init = function(){
         
@@ -73,7 +73,6 @@ angular.module('asbike.HomeCtrl', ['firebase'])
     
     
     $scope.resolveRequest = function() {            
-        
         angular.forEach($scope.alerts, function(key, value) {
             if(key && key.alertStatus) {
                 key.alertStatus = "Step4";
@@ -87,6 +86,20 @@ angular.module('asbike.HomeCtrl', ['firebase'])
         $scope.help = null;
     };
     
+    $scope.showConfirm = function() {
+        var confirmPopup = $ionicPopup.confirm({
+            title: 'ProShepherd',
+            template: 'Are you sure you want to cancel this request?'
+        });
+        confirmPopup.then(function(res) {
+            if(res) {
+                $scope.resolveRequest();
+            } 
+            else {
+                //console.log('You are not sure');
+            }
+        });
+    };
     
     $scope.init();
     
