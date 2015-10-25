@@ -5,10 +5,20 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('asbike', ['ionic', 'asbike.HomeCtrl', 'asbike.HelpCtrl'])
+angular.module('asbike', 
+    [
+        'ionic', 
+        'asbike.HomeCtrl', 
+        'asbike.HelpCtrl',
+        'firebase',
+        'asbike.AlertFactory', 
+        'asbike.UserFactory',
+        'ngCordova'
+    ])
 
 .run(function($ionicPlatform) {
-  $ionicPlatform.ready(function() {
+  
+    $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
@@ -21,6 +31,7 @@ angular.module('asbike', ['ionic', 'asbike.HomeCtrl', 'asbike.HelpCtrl'])
       StatusBar.styleLightContent();
     }
   });
+     
 })
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {

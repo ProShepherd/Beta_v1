@@ -1,6 +1,99 @@
 <ion-view title="Home">
+    
     <ion-content padding="true">
-        <h2>Hello ASBike!</h2>
-        <p>Let's help some people bike safely</p>
+        <!-- Page Heading -->
+        <!--div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    My Events
+                    <small>Ride For Roswell</small>
+                </h1>
+            </div>
+        </div-->
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12" ng-hide="activeRequest">
+                <div class="panel panel-success" ng-click="addAlertNotification('mechanical')">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-wrench fa-5x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Mechanical Assistance Needed</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12" ng-hide="activeRequest">
+                <div class="panel panel-info" ng-click="addAlertNotification('medical')">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-ambulance fa-5x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Minor Medical Assistance Needed</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12" ng-hide="activeRequest">
+                <div class="panel panel-danger" ng-click="addAlertNotification('nutritional')">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-cutlery fa-5x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Nutritional Support Needed</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-xs-12" ng-show="activeRequest">
+                <div class="panel panel-danger" ng-click="resolveRequest()">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-3">
+                                <i class="fa fa-times-circle fa-5x"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#">
+                        <div class="panel-footer">
+                            <span class="pull-left">Cancel Request</span>
+                            <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+        <!-- /.row -->
     </ion-content>
+
 </ion-view>

@@ -1,7 +1,32 @@
 {
-  "name": "HelloIonic",
-  "private": "true",
-  "devDependencies": {
-    "ionic": "driftyco/ionic-bower#1.1.0"
+  "name": "ProShepherd",
+  "description": "ASBike: An Ionic project",
+  "main": "",
+  "authors": [
+    "anton111 <aanastasia111@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ProShepherd/Beta_v1",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "angular": "1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-sanitize": "~1.4.7"
+  },
+  "dependencies": {
+    "angular": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-bootstrap": "angular-ui-bootstrap-bower#~0.14.3",
+    "angular-sanitize": "~1.4.7",
+    "ionic": "~1.1.0",
+    "bootstrap": "~3.3.5"
   }
 }
