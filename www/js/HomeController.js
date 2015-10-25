@@ -19,7 +19,8 @@ angular.module('asbike.HomeCtrl', ['firebase'])
                     
                     if(key.alertStatus !== "Step4"){
                         $scope.activeRequest = true;
-                        $scope.alertTimestamp = value;    
+                        $scope.alertTimestamp = value;
+                        $scope.getCurrentLocation();
                     }
                     
                 }
@@ -79,7 +80,9 @@ angular.module('asbike.HomeCtrl', ['firebase'])
             }
         });
         
-        $scope.currentLocation.clearWatch();
+        if($scope.currentLocation){
+            $scope.currentLocation.clearWatch();
+        }        
         $scope.activeRequest = false;
         $scope.help = null;
     };
