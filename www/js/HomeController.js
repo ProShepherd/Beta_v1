@@ -45,7 +45,8 @@ angular.module('asbike.HomeCtrl', ['firebase'])
         function(err) {
           console.log(err);
         },
-        function(position) {    
+        function(position) {   
+            
             $scope.user.latitude = position.coords.latitude;
             $scope.user.longitude = position.coords.longitude;
         });
@@ -65,6 +66,7 @@ angular.module('asbike.HomeCtrl', ['firebase'])
         $scope.alerts[$scope.alertTimestamp] = newAlert;
         $scope.activeRequest = true;
         $scope.getCurrentLocation();
+        $scope.help = null;
         
     };
     
@@ -79,18 +81,31 @@ angular.module('asbike.HomeCtrl', ['firebase'])
         
         $scope.currentLocation.clearWatch();
         $scope.activeRequest = false;
-        
+        $scope.help = null;
     };
     
     
     $scope.init();
     
-    
-    $scope.$watch('alerts', function(alerts) {
-        if($scope.alertTimestamp && $scope.alerts[$scope.alertTimestamp].alertStatus == "Step4") {
-            $scope.activeRequest = false;
-            $scope.currentLocation.clearWatch();
+   $scope.$watch('alerts', function(alerts) {
+        if($scope.alertTimestamp){ 
+            
+            if($scope.alerts[$scope.alertTimestamp].alertStatus == "Step4") {
+                $scope.activeRequest = false;
+                $scope.currentLocation.clearWatch();
+                $scope.help = null;
+            }
+            
         }
+       
+    }); 
+    
+    $scope.$watch('user', function(user){
+        
+        if($scope.activeRequest && $scope.user.supportId){
+            $scope.help = "Help is on the way!";    
+        }
+        
     });
 
 }]); 
