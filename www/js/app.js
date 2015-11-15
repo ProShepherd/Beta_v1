@@ -13,6 +13,8 @@ angular.module('asbike',
         'firebase',
         'asbike.AlertFactory', 
         'asbike.UserFactory',
+        'asbike.LoginCtrl',
+        'asbike.LoginService',
         'ngCordova'
     ])
 
@@ -66,9 +68,14 @@ angular.module('asbike',
                 controller: "HelpCtrl"
             }
         }
+    })
+    .state('login', {
+      url: '/login',
+      templateUrl: "templates/login.html",
+      controller: "LoginCtrl"
     });
     
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/home');
+  $urlRouterProvider.otherwise('/login');///tab/home'); //TODO: this should go to a 404?
 
 });
