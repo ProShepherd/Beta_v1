@@ -1,1 +1,48 @@
 /* Empty. Add your own CSS if you like */
+html,body{
+    height: 100%
+}
+
+div.scroll {
+    min-height: 100%;
+    height:100%;
+}
+
+#loginForm {
+    min-height: 100%
+}
+
+#loginHeader {
+    word-break: break-word;
+    padding-top:30px;
+    padding-left:12px;
+}
+
+#oauthAnim {
+    padding-top: 25px;
+}
+
+#ezAnim {
+    padding-top: 25px;
+}
+
+.login-input {
+    line-height: normal; 
+}
+
+#login-help.help-block {
+    padding-left:12px;
+    padding-top:10px;
+}
+
+.login-animate.ng-hide {
+  height:0;
+  opacity:0;
+  padding:0;
+}
+
+.login-animate.ng-hide-remove,
+.login-animate.ng-hide-add {
+  display: block !important;
+  transition: all linear 300ms;
+}

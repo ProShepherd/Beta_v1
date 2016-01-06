@@ -6,7 +6,7 @@ angular.module('asbike.LoginService', [])
             var deferred = $q.defer();
             var promise = deferred.promise;
  
-            if (name == 'user' && pw == 'secret') {
+            if (name.toLowerCase() == 'user' && pw.toLowerCase() == 'secret') {
                 deferred.resolve('Welcome ' + name + '!');
             } else {
                 deferred.reject('Wrong credentials.');
